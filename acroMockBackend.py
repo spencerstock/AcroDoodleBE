@@ -18,8 +18,8 @@ def getAcronym():
 def getLeaderboard():
 
 
-    leaders = ["Jerry", "Nancy", "Samantha", "Cornpop",
-    "Terrence", "Lawrence", "Gary", "Martin", "Aerodonis"]
+    leaders = [("Jerry", 5000), ("Nancy", 4650) ("Samantha", 4200), ("Cornpop", 3500)
+    ("Terrence", 2985) ("Lawrence", 2600) ("Gary", 2200) ("Martin", 2000) ("Aerodonis", 500)]
     return jsonify(leaders)
 
 
@@ -28,7 +28,7 @@ def index():
     return "<h1>Mock Server</h1>"
 
 
-def randomString(stringLength=4):
+def randomString(stringLength=4, methods=['GET']):
     """Generate a random string of fixed length """
     letters = string.ascii_lowercase
     return ''.join(random.choice(letters) for i in range(stringLength))

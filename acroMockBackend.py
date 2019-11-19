@@ -18,8 +18,16 @@ def getAcronym():
 def getLeaderboard():
 
 
-    leaders = [("Jerry", 5000), ("Nancy", 4650) ("Samantha", 4200), ("Cornpop", 3500)
-    ("Terrence", 2985) ("Lawrence", 2600) ("Gary", 2200) ("Martin", 2000) ("Aerodonis", 500)]
+    leaders = {}
+    leaders["Gary"] = 5000
+    leaders["Samantha"] = 4650
+    leaders["Intrepid"] = 4200
+    leaders["Sally"] = 3650
+    leaders["Terrence"] = 3200
+    leaders["Phil"] = 2800
+    leaders["Treyvon"] = 2500
+    leaders["Cornpop"] = 2000
+    
     return jsonify(leaders)
 
 

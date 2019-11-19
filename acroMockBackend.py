@@ -7,14 +7,14 @@ import string
 
 app = Flask(__name__)
 
-@app.route("/acronym")
+@app.route("/acronym", methods=['GET'])
 def getAcronym():
     return f"{randomString(4)}"
 
 
 
 
-@app.route("/leaderboard")
+@app.route("/leaderboard", methods=['GET'])
 def getLeaderboard():
 
 
@@ -23,7 +23,9 @@ def getLeaderboard():
     return jsonify(leaders)
 
 
-
+@app.route('/')
+def index():
+    return "<h1>Mock Server</h1>"
 
 
 def randomString(stringLength=4):

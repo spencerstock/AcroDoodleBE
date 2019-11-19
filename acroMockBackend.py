@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/acronym", methods=['GET'])
 def getAcronym():
-    return f"{randomString(4)}"
+    return jsonify(f"{randomString(4)}")
 
 
 

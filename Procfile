@@ -1,1 +1,1 @@
-web: gunicorn acroMockBackend:acroMockBackend
+web: gunicorn acroMockBackend:app

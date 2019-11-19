@@ -1,5 +1,5 @@
-from flask import Flask
-from flask import jsonify
+
+from flask import jsonify, json, Flask
 
 import random
 import string
@@ -11,6 +11,10 @@ app = Flask(__name__)
 def getAcronym():
     return jsonify(f"{randomString(4)}")
 
+def highscore(name, score):
+    name = name
+    score = score
+
 
 
 
@@ -18,17 +22,23 @@ def getAcronym():
 def getLeaderboard():
 
 
-    leaders = {}
-    leaders["Gary"] = 5000
-    leaders["Samantha"] = 4650
-    leaders["Intrepid"] = 4200
-    leaders["Sally"] = 3650
-    leaders["Terrence"] = 3200
-    leaders["Phil"] = 2800
-    leaders["Treyvon"] = 2500
-    leaders["Cornpop"] = 2000
+
+    scoreList = []
+
+    tempScore = 5000
+    for i in range(0,10):
+        myDict = {
+        'userName': randomString(8),
+        'Score': tempScore}
+        scoreList.append(myDict)
+        tempScore -= 250
+
+    # convert to json data
+    jsonStr = json.dumps(scoreList)
+    return jsonStr
+
     
-    return jsonify(leaders)
+
 
 
 @app.route('/')
